@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --box-shadow: 0 1px 3px rgba(255, 255, 255, 0.32),
+    0 1px 2px rgba(255, 255, 255, 0.35);
 }
 
 * {
@@ -9,7 +10,7 @@
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,25 +18,32 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  color: #fff;
 }
 
 .container {
-  margin: 30px auto;
+  margin: 10px auto;
   width: 350px;
 }
 
+header {
+  margin-top: 20px;
+}
+
 h1 {
+  font-size: 1.4rem;
   letter-spacing: 1px;
   margin: 0;
 }
 
 h2 {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #fff;
   padding-bottom: 10px;
-  margin: 40px 0 10px;
+  margin: 40px 0 15px;
 }
 
 h3 {
+  color: #fff;
   margin: 0;
   text-transform: uppercase;
 }
@@ -46,12 +54,16 @@ h4 {
 }
 
 .inc-exp-container {
-  background-color: #fff;
+  background-color: #efefef;
   box-shadow: var(--box-shadow);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+}
+
+.inc-exp-container h3 {
+  color: #000;
 }
 
 .inc-exp-container > div {
@@ -60,13 +72,14 @@ h4 {
 }
 
 .inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
+  border-right: 1px solid #999;
 }
 
 .money {
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 1px;
   margin: 5px 0;
+  font-weight: bold;
 }
 
 .money.plus {
@@ -76,6 +89,10 @@ h4 {
 
 .money.minus {
   color: #c0392b;
+}
+
+.form-control {
+  margin-bottom: 10px;
 }
 
 label {
@@ -95,15 +112,16 @@ input[type='number'] {
 
 .btn {
   cursor: pointer;
-  background-color: #144fbd;
+  background-color: #222;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
   display: block;
   font-size: 16px;
-  margin: 10px 0 30px;
+  margin: 30px 0 30px;
   padding: 10px;
   width: 100%;
+  border-radius: 4px;
 }
 
 .btn:focus,
@@ -111,21 +129,28 @@ input[type='number'] {
   outline: 0;
 }
 
+.btn:active {
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.32),
+    0 1px 1px rgba(255, 255, 255, 0.35);
+  transform: translateY(4px);
+}
+
 .list {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .list li {
-  background-color: #fff;
+  background-color: #202020;
   box-shadow: var(--box-shadow);
-  color: #333;
+  color: #efefef;
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 10px;
   margin: 10px 0;
+  font-weight: bold;
 }
 
 .list li.plus {
@@ -154,4 +179,29 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+@media screen and (min-width: 410px) {
+  header {
+    margin-top: 30px;
+  }
+
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .list {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .delete-btn {
+    opacity: 1;
+  }
 }
